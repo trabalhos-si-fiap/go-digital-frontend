@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
   :focus-visible {
     outline: transparent;
-    box-shadow: 0 0 0 2px ${({ theme }) => theme.color['purple-500']};
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.color['yellow-500']};
     border-radius: 6px;
   }
 
@@ -15,12 +15,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #2D2D20;
+    background-color: ${({ theme }) => theme.color['brown-700']};
     -webkit-font-smoothing: antialiased;
   }
 
   body, input, textarea, button {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 1rem;
   }
@@ -33,5 +33,9 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: inherit;
+  }
+
+  img {
+    line-height: 0;
   }
 `

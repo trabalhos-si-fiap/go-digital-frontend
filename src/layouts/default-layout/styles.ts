@@ -1,29 +1,36 @@
 import styled from 'styled-components'
 
 export const LayoutHeader = styled.header`
-  background-color: #D1E00B;
+  background-color: ${({ theme }) => theme.color['yellow-500']};
 
   nav {
+    width: 75rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 6px 0;
-    max-width: 90rem;
+    padding: 24px 0;
     margin: 0 auto;
+    gap: 32px;
 
-    a img{
+    a {
+      img {
       display: flex;
       align-items: center;
       border-radius: 0;
 
-      height: 36px;
+      height: 56px;
+      }
+
+      &:last-of-type {
+        margin-left: auto;
+      }
     }
+
   }
 `
 
 export const LayoutContainer = styled.div`
-  width: 90rem;
+  width: 75rem;
   height: 100vh;
   margin: 0 auto;
-  background-color: lightblue;
+  background-color: ${({ theme }) => theme.color['brown-700']};
 `

@@ -6,7 +6,6 @@ import Clientes from './pages/Clientes'
 import Dashboard from './pages/Dashboard'
 import Equipes from './pages/Equipes'
 import Home from './pages/Home'
-import Relatorios from './pages/Relatorios'
 import Tarefas from './pages/Tarefas'
 
 export default function Router() {
@@ -18,7 +17,6 @@ export default function Router() {
         <Route path="/clientes" element={<Clientes />} />
         <Route path="/tarefas" element={<Tarefas />} />
         <Route path="/campanhas" element={<Campanhas />} />
-        <Route path="/relatorios" element={<Relatorios />} />
         <Route path="/equipes" element={<Equipes />} />
       </Route>
     </Routes>

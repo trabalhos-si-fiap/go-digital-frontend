@@ -1,4 +1,5 @@
-import { NavLink } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+import { SNavLink } from './styles'
 
 interface NavItemProps {
   to: string
@@ -8,10 +9,12 @@ interface NavItemProps {
 }
 
 export function NavItem({ to, title, label, icon }: NavItemProps) {
+  const { pathname } = useLocation()
+
   return (
-    <NavLink to={to} title={title}>
+    <SNavLink data-current={pathname === to} to={to} title={title}>
       {icon}
       {label}
-    </NavLink>
+    </SNavLink>
   )
 }
