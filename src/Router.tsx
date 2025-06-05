@@ -6,11 +6,13 @@ import Clientes from './pages/Clientes'
 import Dashboard from './pages/Dashboard'
 import Equipes from './pages/Equipes'
 import Home from './pages/Home'
+import Login from './pages/Login'
 import Tarefas from './pages/Tarefas'
 
 export default function Router() {
   return (
     <Routes>
+      <Route path="/login" element={<Login />} />
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
