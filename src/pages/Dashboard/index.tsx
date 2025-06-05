@@ -17,7 +17,7 @@ export default function Dashboard() {
       <LogContainer>
         <h2>Atividades Recentes</h2>
         <ul>
-          <li>Análise de Anúncio conclúida.</li>
+          <li>Análise de Anúncio concluída.</li>
           <li>Tarefa "Criar contéudo para Campanha X" concluída.</li>
           <li>Novo Cliente adicionado.</li>
         </ul>

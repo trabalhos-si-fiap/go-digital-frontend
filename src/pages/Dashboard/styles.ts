@@ -5,10 +5,7 @@ export const DashboardContainer = styled.div`
 
   h1 {
     font: ${({ theme }) => theme.font['title-xl']};
-    color: ${
-      // biome-ignore lint/complexity/useLiteralKeys: <explanation>
-      ({ theme }) => theme.color['white']
-    };
+    color: ${({ theme }) => theme.color['white']};
 
     span {
       color: ${({ theme }) => theme.color['yellow-500']};
@@ -40,12 +37,9 @@ export const LogContainer = styled.div`
   }
 
   li {
-    font: ${({ theme }) => theme.font['text-m']};
+    font: ${({ theme }) => theme.font['text-l']};
     line-height: 1.5;
-    color: ${
-      // biome-ignore lint/complexity/useLiteralKeys: <explanation>
-      ({ theme }) => theme.color['white']
-    };
+    color: ${({ theme }) => theme.color['white']};
 
   }
 `
