@@ -5,7 +5,9 @@ export const defaultTheme = {
     'brown-500': '#2D2D20',
     'brown-700': '#171713',
 
+    'yellow-300': '#F0F65F',
     'yellow-500': '#D1E00B',
+    'yellow-700': '#A0AD00',
   },
 
   font: {

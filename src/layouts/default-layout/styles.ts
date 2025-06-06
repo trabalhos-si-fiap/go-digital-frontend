@@ -4,19 +4,26 @@ export const LayoutHeader = styled.header`
   background-color: ${({ theme }) => theme.color['yellow-500']};
 
   nav {
-    width: 75rem;
+    max-width: 75rem;
+    width: 100%;
+
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    padding: 24px 0;
-    margin: 0 auto;
     gap: 32px;
 
+    padding: 24px 0;
+    margin: 0 auto;
+
+    font: ${({ theme }) => theme.font['text-m']};
+
     a {
+      line-height: 0;
+      
       img {
       display: flex;
       align-items: center;
       border-radius: 0;
-
       height: 56px;
       }
 
@@ -25,12 +32,15 @@ export const LayoutHeader = styled.header`
       }
     }
 
+    @media (max-width: 796px) {
+      justify-content: space-between;
+      padding: 24px 16px;
+    }
   }
 `
 
 export const LayoutContainer = styled.div`
   width: 75rem;
-  height: 100vh;
   margin: 0 auto;
   background-color: ${({ theme }) => theme.color['brown-700']};
 `

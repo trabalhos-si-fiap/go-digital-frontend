@@ -6,9 +6,9 @@ import { LayoutContainer, LayoutHeader } from './styles'
 
 const navLinks = [
   { to: '/dashboard', title: 'Dashboard', label: 'Dashboard' },
+  { to: '/clientes', title: 'Clientes', label: 'Clientes' },
   { to: '/campanhas', title: 'Campanhas', label: 'Campanhas' },
   { to: '/tarefas', title: 'Tarefas', label: 'Tarefas' },
-  { to: '/clientes', title: 'Clientes', label: 'Clientes' },
   { to: '/equipes', title: 'Equipes', label: 'Equipes' },
   { to: '/contato', title: 'Contato', label: 'Contato' },
 ]
