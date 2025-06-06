@@ -10,7 +10,6 @@ const navLinks = [
   { to: '/campanhas', title: 'Campanhas', label: 'Campanhas' },
   { to: '/tarefas', title: 'Tarefas', label: 'Tarefas' },
   { to: '/equipes', title: 'Equipes', label: 'Equipes' },
-  { to: '/contato', title: 'Contato', label: 'Contato' },
 ]
 
 export default function DefaultLayout() {
