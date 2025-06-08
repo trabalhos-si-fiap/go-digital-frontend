@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const DashboardContainer = styled.div`
+export const DashboardHeader = styled.div`
   margin-top: 80px;
 
   h1 {
