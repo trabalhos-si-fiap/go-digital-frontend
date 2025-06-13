@@ -1,7 +1,10 @@
 import { UserCircleIcon } from '@phosphor-icons/react'
-import { Outlet } from 'react-router-dom'
+import { isAxiosError } from 'axios'
+import { useEffect } from 'react'
+import { Outlet, useNavigate } from 'react-router-dom'
 import larosBlack from '../../../assets/laros-black.svg'
 import { NavItem } from '../../../components/navLink'
+import { api } from '../../../lib/axios'
 import { LayoutContainer, LayoutHeader, SProfileButton } from './styles'
 
 const navLinks = [
@@ -13,6 +16,29 @@ const navLinks = [
 ]
 
 export default function DefaultLayout() {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const interceptorId = api.interceptors.response.use(
+      (response) => response,
+      (error) => {
+        if (isAxiosError(error)) {
+          const status = error.response?.status
+
+          if (status === 401) {
+            navigate('/sign-in', { replace: true })
+          } else {
+            throw error
+          }
+        }
+      },
+    )
+
+    return () => {
+      api.interceptors.response.eject(interceptorId)
+    }
+  }, [navigate])
+
   return (
     <>
       <LayoutHeader>

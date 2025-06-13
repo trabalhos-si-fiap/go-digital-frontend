@@ -6,6 +6,7 @@ import Clientes from './pages/app/clientes'
 import Dashboard from './pages/app/dashboard'
 import Equipes from './pages/app/equipes'
 import Tarefas from './pages/app/tarefas'
+import Login from './pages/auth/login'
 
 export const router = createBrowserRouter([
   {
@@ -18,5 +19,9 @@ export const router = createBrowserRouter([
       { path: '/tarefas', element: <Tarefas /> },
       { path: '/equipes', element: <Equipes /> },
     ],
+  },
+  {
+    path: '/login',
+    element: <Login />,
   },
 ])
