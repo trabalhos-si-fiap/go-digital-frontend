@@ -1,11 +1,11 @@
 import { UserCircleIcon } from '@phosphor-icons/react'
 import { Outlet } from 'react-router-dom'
-import larosBlack from '../../assets/laros-black.svg'
-import { NavItem } from '../../components/navLink'
+import larosBlack from '../../../assets/laros-black.svg'
+import { NavItem } from '../../../components/navLink'
 import { LayoutContainer, LayoutHeader } from './styles'
 
 const navLinks = [
-  { to: '/dashboard', title: 'Dashboard', label: 'Dashboard' },
+  { to: '/', title: 'Dashboard', label: 'Dashboard' },
   { to: '/clientes', title: 'Clientes', label: 'Clientes' },
   { to: '/campanhas', title: 'Campanhas', label: 'Campanhas' },
   { to: '/tarefas', title: 'Tarefas', label: 'Tarefas' },
@@ -17,11 +17,7 @@ export default function DefaultLayout() {
     <>
       <LayoutHeader>
         <nav>
-          <NavItem
-            to="/dashboard"
-            title="Dashboard"
-            icon={<img src={larosBlack} alt="Larós Logo" />}
-          />
+          <NavItem to="/" title="Dashboard" icon={<img src={larosBlack} alt="Larós Logo" />} />
 
           {navLinks.map(({ to, title, label }) => (
             <NavItem key={to} to={to} title={title} label={label} />
