@@ -19,17 +19,6 @@ export const LayoutHeader = styled.header`
 
     a {
       line-height: 0;
-      
-      img {
-      display: flex;
-      align-items: center;
-      border-radius: 0;
-      height: 56px;
-      }
-
-      &:last-of-type {
-        margin-left: auto;
-      }
     }
 
     @media (max-width: 796px) {
@@ -37,6 +26,13 @@ export const LayoutHeader = styled.header`
       padding: 24px 16px;
     }
   }
+`
+export const SProfileButton = styled.button`
+  cursor: pointer;
+  background-color: transparent;
+  line-height: 0;
+
+  margin-left: auto;
 `
 
 export const LayoutContainer = styled.div`

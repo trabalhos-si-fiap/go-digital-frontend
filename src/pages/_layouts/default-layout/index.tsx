@@ -2,7 +2,7 @@ import { UserCircleIcon } from '@phosphor-icons/react'
 import { Outlet } from 'react-router-dom'
 import larosBlack from '../../../assets/laros-black.svg'
 import { NavItem } from '../../../components/navLink'
-import { LayoutContainer, LayoutHeader } from './styles'
+import { LayoutContainer, LayoutHeader, SProfileButton } from './styles'
 
 const navLinks = [
   { to: '/', title: 'Dashboard', label: 'Dashboard' },
@@ -23,7 +23,9 @@ export default function DefaultLayout() {
             <NavItem key={to} to={to} title={title} label={label} />
           ))}
 
-          <NavItem to="/perfil" title="Perfil" icon={<UserCircleIcon size={56} weight="fill" />} />
+          <SProfileButton type="button">
+            <UserCircleIcon size={56} weight="fill" />
+          </SProfileButton>
         </nav>
       </LayoutHeader>
       <LayoutContainer>
