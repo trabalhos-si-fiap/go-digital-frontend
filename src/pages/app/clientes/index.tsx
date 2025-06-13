@@ -1,3 +1,4 @@
+import { Helmet } from '@dr.pogodin/react-helmet'
 import { EnvelopeSimpleIcon, MagnifyingGlassIcon, WhatsappLogoIcon } from '@phosphor-icons/react'
 import { Table } from '../../../components/table'
 import { ClienteHeader, ClienteSection, GhostButton, SolidButton } from './styles'
@@ -5,6 +6,7 @@ import { ClienteHeader, ClienteSection, GhostButton, SolidButton } from './style
 export default function Clientes() {
   return (
     <>
+      <Helmet title="Clientes" />
       <ClienteHeader>
         <h1>Clientes</h1>
         <button type="button">Adicionar novo cliente</button>

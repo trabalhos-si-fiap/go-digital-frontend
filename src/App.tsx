@@ -1,3 +1,4 @@
+import { Helmet, HelmetProvider } from '@dr.pogodin/react-helmet'
 import { RouterProvider } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { router } from './router'
@@ -6,10 +7,13 @@ import { defaultTheme } from './styles/themes/default'
 
 export default function App() {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <RouterProvider router={router} />
+    <HelmetProvider>
+      <ThemeProvider theme={defaultTheme}>
+        <Helmet titleTemplate="%s | Larós MKTDGT" />
+        <RouterProvider router={router} />
 
-      <GlobalStyle />
-    </ThemeProvider>
+        <GlobalStyle />
+      </ThemeProvider>
+    </HelmetProvider>
   )
 }

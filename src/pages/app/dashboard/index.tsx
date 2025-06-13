@@ -1,3 +1,4 @@
+import { Helmet } from '@dr.pogodin/react-helmet'
 import { CheckIcon, MegaphoneIcon, UserCircleIcon, WarningIcon } from '@phosphor-icons/react'
 import { Card } from '../../../components/card'
 import { CardContainer, DashboardHeader, LogContainer } from './styles'
@@ -5,6 +6,7 @@ import { CardContainer, DashboardHeader, LogContainer } from './styles'
 export default function Dashboard() {
   return (
     <>
+      <Helmet title="Dashboard" />
       <DashboardHeader>
         <h1>
           Olá, <span>Guilherme!</span>
