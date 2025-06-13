@@ -1,13 +1,13 @@
 import { Route, Routes } from 'react-router-dom'
 
 import DefaultLayout from './layouts/default-layout'
-import Campanhas from './pages/Campanhas'
-import Clientes from './pages/Clientes'
-import Dashboard from './pages/Dashboard'
-import Equipes from './pages/Equipes'
-import Home from './pages/Home'
-import Login from './pages/Login'
-import Tarefas from './pages/Tarefas'
+import Campanhas from './pages/campanhas'
+import Clientes from './pages/clientes'
+import Dashboard from './pages/dashboard'
+import Equipes from './pages/equipes'
+import Home from './pages/home'
+import Login from './pages/login'
+import Tarefas from './pages/tarefas'
 
 export default function Router() {
   return (

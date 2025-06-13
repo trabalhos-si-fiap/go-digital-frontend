@@ -1,5 +1,5 @@
 import { CheckIcon, MegaphoneIcon, UserCircleIcon, WarningIcon } from '@phosphor-icons/react'
-import { Card } from '../../components/Card'
+import { Card } from '../../components/card'
 import { CardContainer, DashboardHeader, LogContainer } from './styles'
 
 export default function Dashboard() {

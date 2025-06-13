@@ -1,7 +1,7 @@
 import { UserCircleIcon } from '@phosphor-icons/react'
 import { Outlet } from 'react-router-dom'
 import larosBlack from '../../assets/laros-black.svg'
-import { NavItem } from '../../components/NavLink'
+import { NavItem } from '../../components/navLink'
 import { LayoutContainer, LayoutHeader } from './styles'
 
 const navLinks = [
