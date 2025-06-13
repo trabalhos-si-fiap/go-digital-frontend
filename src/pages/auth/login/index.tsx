@@ -1,4 +1,4 @@
-import larosLogin from '../../assets/laros-login.svg'
+import larosLogin from '../../../assets/laros-login.svg'
 import { LoginContainer, LoginForm } from './styles'
 
 export default function Login() {

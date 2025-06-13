@@ -1,5 +1,5 @@
 import { EnvelopeSimpleIcon, MagnifyingGlassIcon, WhatsappLogoIcon } from '@phosphor-icons/react'
-import { Table } from '../../components/table'
+import { Table } from '../../../components/table'
 import { ClienteHeader, ClienteSection, GhostButton, SolidButton } from './styles'
 
 export default function Clientes() {
