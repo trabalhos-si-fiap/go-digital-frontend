@@ -1,11 +1,11 @@
-import { UserCircleIcon } from '@phosphor-icons/react'
+import { ListIcon, UserCircleIcon } from '@phosphor-icons/react'
 import { isAxiosError } from 'axios'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import larosBlack from '../../../assets/laros-black.svg'
 import { NavItem } from '../../../components/navLink'
 import { api } from '../../../lib/axios'
-import { LayoutContainer, LayoutHeader, SProfileButton } from './styles'
+import { SHamburgerButton, SLayoutContainer, SLayoutHeader, SNav, SProfileButton } from './styles'
 
 const navLinks = [
   { to: '/', title: 'Dashboard', label: 'Dashboard' },
@@ -16,6 +16,7 @@ const navLinks = [
 ]
 
 export default function DefaultLayout() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -41,8 +42,12 @@ export default function DefaultLayout() {
 
   return (
     <>
-      <LayoutHeader>
-        <nav>
+      <SLayoutHeader>
+        <SHamburgerButton onClick={() => setIsMenuOpen((prev) => !prev)}>
+          <ListIcon size={32} weight="bold" />
+        </SHamburgerButton>
+
+        <SNav $isOpen={isMenuOpen}>
           <NavItem to="/" title="Dashboard" icon={<img src={larosBlack} alt="Larós Logo" />} />
 
           {navLinks.map(({ to, title, label }) => (
@@ -52,11 +57,11 @@ export default function DefaultLayout() {
           <SProfileButton type="button">
             <UserCircleIcon size={56} weight="fill" />
           </SProfileButton>
-        </nav>
-      </LayoutHeader>
-      <LayoutContainer>
+        </SNav>
+      </SLayoutHeader>
+      <SLayoutContainer>
         <Outlet />
-      </LayoutContainer>
+      </SLayoutContainer>
     </>
   )
 }

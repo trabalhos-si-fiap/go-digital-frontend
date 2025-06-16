@@ -1,42 +1,87 @@
 import styled from 'styled-components'
 
-export const LayoutHeader = styled.header`
+export const SLayoutHeader = styled.header`
   background-color: ${({ theme }) => theme.color['yellow-500']};
+`
 
-  nav {
-    max-width: 75rem;
-    width: 100%;
+export const SNav = styled.nav<{ $isOpen: boolean }>`
+  max-width: 75rem;
+  width: 100%;
 
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 32px;
 
-    padding: 24px 0;
-    margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 32px;
 
-    font: ${({ theme }) => theme.font['text-m']};
+  padding: 24px 16px;
+  margin: 0 auto;
 
-    a {
-      line-height: 0;
-    }
+  font: ${({ theme }) => theme.font['text-m']};
 
-    @media (max-width: 796px) {
-      justify-content: space-between;
-      padding: 24px 16px;
+  a {
+    line-height: 0;
+  }
+
+  @media (max-width: 1023px) {
+    justify-content: space-between;
+    padding: 24px 16px;
+
+    a:first-of-type {
+      display: none;
     }
   }
+
+  @media (max-width: 639px) {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    ${({ $isOpen }) => !$isOpen && 'display: none;'}
+  }
 `
+
 export const SProfileButton = styled.button`
   cursor: pointer;
   background-color: transparent;
   line-height: 0;
 
   margin-left: auto;
+
+  @media (max-width: 1023px) {
+    margin-left: 0;
+  }
+
+  @media (max-width: 639px) {
+  }
 `
 
-export const LayoutContainer = styled.div`
+export const SHamburgerButton = styled.button`
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+
+  @media (max-width: 639px) {
+    display: block;
+    padding: 24px 16px;
+  }
+`
+
+export const SLayoutContainer = styled.div`
   width: 75rem;
+  padding: 0 16px;
   margin: 0 auto;
   background-color: ${({ theme }) => theme.color['brown-700']};
+
+  @media (max-width: 1200px) {
+    width: auto;
+  }
+
+  @media (max-width: 1023px) {
+  }
+
+  @media (max-width: 639px) {
+  }
 `

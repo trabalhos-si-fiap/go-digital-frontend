@@ -22,6 +22,14 @@ export const CardContainer = styled.div`
   > div {
     flex: 1;
   }
+
+  @media (max-width: 1023px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 639px) {
+    gap: 16px;
+  }
 `
 
 export const LogContainer = styled.div`
@@ -40,6 +48,15 @@ export const LogContainer = styled.div`
     font: ${({ theme }) => theme.font['text-l']};
     line-height: 1.5;
     color: ${({ theme }) => theme.color['white']};
+  }
 
+  @media (max-width: 639px) {
+    h2 {
+      font: ${({ theme }) => theme.font['title-m']};
+    }
+
+    li {
+      font: ${({ theme }) => theme.font['text-m']};
+    }
   }
 `

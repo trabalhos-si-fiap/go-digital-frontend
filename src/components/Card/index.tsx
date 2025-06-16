@@ -1,4 +1,4 @@
-import { SCard } from './styles'
+import { SCardContainer, SCardHeader, SCardLabel } from './styles'
 
 interface CardProps {
   title: string
@@ -8,12 +8,13 @@ interface CardProps {
 
 export function Card({ title, label, icon }: CardProps) {
   return (
-    <SCard>
-      <div>
+    <SCardContainer>
+      <SCardHeader>
         <span>{icon}</span>
         <h3>{title}</h3>
-      </div>
-      <span>{label}</span>
-    </SCard>
+      </SCardHeader>
+
+      <SCardLabel>{label}</SCardLabel>
+    </SCardContainer>
   )
 }
