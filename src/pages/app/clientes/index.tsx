@@ -1,15 +1,24 @@
 import { Helmet } from '@dr.pogodin/react-helmet'
 import { EnvelopeSimpleIcon, MagnifyingGlassIcon, WhatsappLogoIcon } from '@phosphor-icons/react'
+import { useQuery } from '@tanstack/react-query'
+import { getClients } from '../../../api/get-clients'
+import { DialogButton } from '../../../components/dialog-button'
 import { Table } from '../../../components/table'
 import { ClienteHeader, ClienteSection, GhostButton, SolidButton } from './styles'
 
 export default function Clientes() {
+  const { data } = useQuery({
+    queryKey: ['get-clients'],
+    queryFn: getClients,
+  })
+
   return (
     <>
       <Helmet title="Clientes" />
       <ClienteHeader>
         <h1>Clientes</h1>
-        <button type="button">Adicionar novo cliente</button>
+
+        <DialogButton />
       </ClienteHeader>
 
       <ClienteSection>
@@ -29,15 +38,15 @@ export default function Clientes() {
           </Table.Header>
 
           <Table.Body>
-            {[1, 2].map((_, i) => (
-              <Table.Row key={i}>
+            {data?.map((client) => (
+              <Table.Row key={client.email}>
                 <Table.Cell isIcon>
                   <SolidButton type="button">
                     <MagnifyingGlassIcon size={20} />
                   </SolidButton>
                 </Table.Cell>
-                <Table.Cell>@joaosilva</Table.Cell>
-                <Table.Cell>João Silva</Table.Cell>
+                <Table.Cell>{client.instagram}</Table.Cell>
+                <Table.Cell>{client.name}</Table.Cell>
                 <Table.Cell isIcon>
                   <GhostButton type="button">
                     <EnvelopeSimpleIcon size={20} />

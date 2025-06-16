@@ -26,8 +26,8 @@ export default function DefaultLayout() {
         if (isAxiosError(error)) {
           const status = error.response?.status
 
-          if (status === 401) {
-            navigate('/sign-in', { replace: true })
+          if (status === 401 || status === 403 || status === 500) {
+            navigate('/login', { replace: true })
           } else {
             throw error
           }
