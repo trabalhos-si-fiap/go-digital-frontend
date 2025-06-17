@@ -1,10 +1,8 @@
 import { ListIcon, UserCircleIcon } from '@phosphor-icons/react'
-import { isAxiosError } from 'axios'
-import { useEffect, useState } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { Outlet } from 'react-router-dom'
 import larosBlack from '../../../assets/laros-black.svg'
 import { NavItem } from '../../../components/navLink'
-import { api } from '../../../lib/axios'
 import { SHamburgerButton, SLayoutContainer, SLayoutHeader, SNav, SProfileButton } from './styles'
 
 const navLinks = [
@@ -17,28 +15,6 @@ const navLinks = [
 
 export default function DefaultLayout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    const interceptorId = api.interceptors.response.use(
-      (response) => response,
-      (error) => {
-        if (isAxiosError(error)) {
-          const status = error.response?.status
-
-          if (status === 401 || status === 403 || status === 500) {
-            navigate('/login', { replace: true })
-          } else {
-            throw error
-          }
-        }
-      },
-    )
-
-    return () => {
-      api.interceptors.response.eject(interceptorId)
-    }
-  }, [navigate])
 
   return (
     <>
