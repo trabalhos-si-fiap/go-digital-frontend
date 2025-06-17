@@ -1,6 +1,8 @@
+import { zodResolver } from '@hookform/resolvers/zod'
 import { XIcon } from '@phosphor-icons/react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { useMutation } from '@tanstack/react-query'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { createClient } from '../../api/create-client'
@@ -22,12 +24,21 @@ const createClientFormSchema = z.object({
 
 type CreateClientFormSchema = z.infer<typeof createClientFormSchema>
 
-export function DialogButton() {
+interface DialogButtonProps {
+  onClientCreated?: () => void
+}
+
+export function DialogButton({ onClientCreated }: DialogButtonProps) {
+  const [open, setOpen] = useState(false)
+
   const {
     register,
     handleSubmit,
-    formState: { isSubmitting, isSubmitted },
-  } = useForm<CreateClientFormSchema>()
+    formState: { isSubmitting },
+    reset,
+  } = useForm<CreateClientFormSchema>({
+    resolver: zodResolver(createClientFormSchema),
+  })
 
   const { mutateAsync: createClientFn } = useMutation({
     mutationFn: createClient,
@@ -36,13 +47,17 @@ export function DialogButton() {
   async function handleCreateClient(data: CreateClientFormSchema) {
     try {
       await createClientFn({ name: data.name, email: data.email, instagram: data.instagram })
+
+      reset()
+      onClientCreated?.()
+      setOpen(false)
     } catch (error) {
       console.log(`Create client error: ${error}`)
     }
   }
 
   return (
-    <Dialog.Root>
+    <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
         <button type="button">Adicionar novo cliente</button>
       </Dialog.Trigger>

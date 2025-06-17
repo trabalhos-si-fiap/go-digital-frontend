@@ -7,7 +7,7 @@ import { Table } from '../../../components/table'
 import { ClienteHeader, ClienteSection, GhostButton, SolidButton } from './styles'
 
 export default function Clientes() {
-  const { data } = useQuery({
+  const { data: clients, refetch } = useQuery({
     queryKey: ['get-clients'],
     queryFn: getClients,
   })
@@ -18,7 +18,7 @@ export default function Clientes() {
       <ClienteHeader>
         <h1>Clientes</h1>
 
-        <DialogButton />
+        <DialogButton onClientCreated={refetch} />
       </ClienteHeader>
 
       <ClienteSection>
@@ -38,8 +38,8 @@ export default function Clientes() {
           </Table.Header>
 
           <Table.Body>
-            {data?.map((client) => (
-              <Table.Row key={client.email}>
+            {clients?.map((client) => (
+              <Table.Row key={client.id}>
                 <Table.Cell isIcon>
                   <SolidButton type="button">
                     <MagnifyingGlassIcon size={20} />
