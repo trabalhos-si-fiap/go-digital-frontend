@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query'
 import { getClients } from '../../../api/get-clients'
 import { DialogButton } from '../../../components/dialog-button'
 import { Table } from '../../../components/table'
-import { ClienteHeader, ClienteSection, GhostButton, SolidButton } from './styles'
+import { SClienteContent, SClienteHeader, SGhostButton, SSolidButton } from './styles'
 
 export default function Clientes() {
   const { data: clients, refetch } = useQuery({
@@ -15,13 +15,14 @@ export default function Clientes() {
   return (
     <>
       <Helmet title="Clientes" />
-      <ClienteHeader>
+
+      <SClienteHeader>
         <h1>Clientes</h1>
 
         <DialogButton onClientCreated={refetch} />
-      </ClienteHeader>
+      </SClienteHeader>
 
-      <ClienteSection>
+      <SClienteContent>
         <div>
           <span>Filtros:</span>
           <input type="text" placeholder="Instagram/Nome do cliente" />
@@ -41,25 +42,26 @@ export default function Clientes() {
             {clients?.map((client) => (
               <Table.Row key={client.id}>
                 <Table.Cell isIcon>
-                  <SolidButton type="button">
+                  <SSolidButton type="button">
                     <MagnifyingGlassIcon size={20} />
-                  </SolidButton>
+                  </SSolidButton>
                 </Table.Cell>
                 <Table.Cell>{client.instagram}</Table.Cell>
                 <Table.Cell>{client.name}</Table.Cell>
                 <Table.Cell isIcon>
-                  <GhostButton type="button">
+                  <SGhostButton type="button">
                     <EnvelopeSimpleIcon size={20} />
-                  </GhostButton>
-                  <GhostButton type="button">
+                  </SGhostButton>
+
+                  <SGhostButton type="button">
                     <WhatsappLogoIcon size={20} />
-                  </GhostButton>
+                  </SGhostButton>
                 </Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>
         </Table.Root>
-      </ClienteSection>
+      </SClienteContent>
     </>
   )
 }

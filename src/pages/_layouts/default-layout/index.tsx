@@ -35,6 +35,7 @@ export default function DefaultLayout() {
           </SProfileButton>
         </SNav>
       </SLayoutHeader>
+
       <SLayoutContainer>
         <Outlet />
       </SLayoutContainer>

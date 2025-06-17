@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ClienteHeader = styled.header`
+export const SClienteHeader = styled.header`
   margin-top: 80px;
   display: flex;
   justify-content: space-between;
@@ -25,7 +25,7 @@ export const ClienteHeader = styled.header`
   }
 `
 
-export const ClienteSection = styled.section`
+export const SClienteContent = styled.section`
   margin-top: 24px;
 
   > div:first-of-type {
@@ -51,12 +51,12 @@ export const ClienteSection = styled.section`
   }
 `
 
-export const BaseButton = styled.button`
+export const SBaseButton = styled.button`
   cursor: pointer;
   color: inherit;
 `
 
-export const SolidButton = styled(BaseButton)`
+export const SSolidButton = styled(SBaseButton)`
   background-color: #25251D;
   padding: 10px;
   border-radius: 8px;
@@ -67,7 +67,7 @@ export const SolidButton = styled(BaseButton)`
   }
 `
 
-export const GhostButton = styled(BaseButton)`
+export const SGhostButton = styled(SBaseButton)`
   background-color: transparent;
   padding: 10px;
 

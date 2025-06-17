@@ -69,7 +69,7 @@ export const SHamburgerButton = styled.button`
   }
 `
 
-export const SLayoutContainer = styled.div`
+export const SLayoutContainer = styled.main`
   width: 75rem;
   padding: 0 16px;
   margin: 0 auto;
