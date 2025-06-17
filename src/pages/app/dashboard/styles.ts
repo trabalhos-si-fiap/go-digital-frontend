@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const DashboardHeader = styled.div`
+export const SDashboardHeader = styled.header`
   margin-top: 80px;
 
   h1 {
@@ -13,7 +13,9 @@ export const DashboardHeader = styled.div`
   }
 `
 
-export const CardContainer = styled.div`
+export const SDashboardContent = styled.section``
+
+export const SCardContainer = styled.div`
   margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
@@ -32,7 +34,7 @@ export const CardContainer = styled.div`
   }
 `
 
-export const LogContainer = styled.div`
+export const SLogContainer = styled.div`
   margin-top: 24px;
   padding: 24px;
   background-color: ${({ theme }) => theme.color['brown-500']};
