@@ -1,6 +1,7 @@
 import { Helmet } from '@dr.pogodin/react-helmet'
 import { EnvelopeSimpleIcon, MagnifyingGlassIcon, WhatsappLogoIcon } from '@phosphor-icons/react'
 import { useQuery } from '@tanstack/react-query'
+import { exportClients } from '../../../api/export-clients'
 import { getClients } from '../../../api/get-clients'
 import { DialogButton } from '../../../components/dialog-button'
 import { Table } from '../../../components/table'
@@ -11,6 +12,14 @@ export default function Clientes() {
     queryKey: ['get-clients'],
     queryFn: getClients,
   })
+
+  async function handleExportButton() {
+    try {
+      await exportClients()
+    } catch (err) {
+      alert('Erro ao exportar CSV')
+    }
+  }
 
   return (
     <>
@@ -61,6 +70,10 @@ export default function Clientes() {
             ))}
           </Table.Body>
         </Table.Root>
+
+        <button type="button" onClick={handleExportButton}>
+          Exportar tudo em .CSV
+        </button>
       </SClienteContent>
     </>
   )

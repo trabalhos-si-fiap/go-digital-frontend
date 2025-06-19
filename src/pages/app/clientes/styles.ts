@@ -27,7 +27,11 @@ export const SClienteHeader = styled.header`
 
 export const SClienteContent = styled.section`
   margin-top: 24px;
-
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  
   > div:first-of-type {
     display: flex;
     align-items: center;
@@ -48,6 +52,13 @@ export const SClienteContent = styled.section`
       border: 0;
       border-radius: 6px;
     }
+  }
+
+  > button {
+    cursor: pointer;
+    background-color: transparent;
+    font: ${({ theme }) => theme.font['text-s']};
+    color: ${({ theme }) => theme.color['white']}
   }
 `
 
