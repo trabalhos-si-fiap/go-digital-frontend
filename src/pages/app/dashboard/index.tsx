@@ -2,8 +2,9 @@ import { Helmet } from '@dr.pogodin/react-helmet'
 import { CheckIcon, MegaphoneIcon, UserCircleIcon, WarningIcon } from '@phosphor-icons/react'
 import { useQuery } from '@tanstack/react-query'
 import { getClients } from '../../../api/get-clients'
-import { Card } from '../../../components/card'
+
 import { SCardContainer, SDashboardContent, SDashboardHeader, SLogContainer } from './styles'
+import { Card } from '../../../components/Card'
 
 export default function Dashboard() {
   const { data } = useQuery({

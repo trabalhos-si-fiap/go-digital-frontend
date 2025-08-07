@@ -4,8 +4,8 @@ import { useQuery } from '@tanstack/react-query'
 import { exportClients } from '../../../api/export-clients'
 import { getClients } from '../../../api/get-clients'
 import { DialogButton } from '../../../components/dialog-button'
-import { Table } from '../../../components/table'
 import { SClienteContent, SClienteHeader, SGhostButton, SSolidButton } from './styles'
+import { Table } from '../../../components/Table'
 
 export default function Clientes() {
   const { data: clients, refetch } = useQuery({

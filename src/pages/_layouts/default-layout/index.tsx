@@ -2,8 +2,8 @@ import { ListIcon, UserCircleIcon } from '@phosphor-icons/react'
 import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import larosBlack from '../../../assets/laros-black.svg'
-import { NavItem } from '../../../components/navLink'
 import { SHamburgerButton, SLayoutContainer, SLayoutHeader, SNav, SProfileButton } from './styles'
+import { NavItem } from '../../../components/NavLink'
 
 const navLinks = [
   { to: '/', title: 'Dashboard', label: 'Dashboard' },
