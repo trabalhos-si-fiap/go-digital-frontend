@@ -3,9 +3,9 @@ import { QueryClientProvider } from '@tanstack/react-query'
 import { RouterProvider } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { queryClient } from './lib/react-query'
-import { router } from './Router'
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
+import { router } from './router'
 
 export default function App() {
   return (

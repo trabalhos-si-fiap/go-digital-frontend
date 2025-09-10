@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import larosBlack from '../../../assets/laros-black.svg'
 import { SHamburgerButton, SLayoutContainer, SLayoutHeader, SNav, SProfileButton } from './styles'
-import { NavItem } from '../../../components/NavLink'
+import { NavItem } from '../../../components/navLink'
 
 const navLinks = [
   { to: '/', title: 'Dashboard', label: 'Dashboard' },

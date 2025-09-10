@@ -20,6 +20,7 @@ const createClientFormSchema = z.object({
   name: z.string(),
   email: z.string().email(),
   instagram: z.string(),
+  phone: z.string(),
 })
 
 type CreateClientFormSchema = z.infer<typeof createClientFormSchema>
@@ -46,7 +47,12 @@ export function DialogButton({ onClientCreated }: DialogButtonProps) {
 
   async function handleCreateClient(data: CreateClientFormSchema) {
     try {
-      await createClientFn({ name: data.name, email: data.email, instagram: data.instagram })
+      await createClientFn({
+        name: data.name,
+        email: data.email,
+        instagram: data.instagram,
+        phone: data.phone,
+      })
 
       reset()
       onClientCreated?.()
@@ -87,6 +93,11 @@ export function DialogButton({ onClientCreated }: DialogButtonProps) {
             <SFieldset>
               <label htmlFor="instagram">Instagram</label>
               <input type="text" id="instagram" {...register('instagram')} />
+            </SFieldset>
+
+            <SFieldset>
+              <label htmlFor="phone">Phone</label>
+              <input type="text" id="phone" {...register('phone')} />
             </SFieldset>
 
             <div>

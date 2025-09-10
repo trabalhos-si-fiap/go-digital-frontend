@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query'
 import { getClients } from '../../../api/get-clients'
 
 import { SCardContainer, SDashboardContent, SDashboardHeader, SLogContainer } from './styles'
-import { Card } from '../../../components/Card'
+import { Card } from '../../../components/card'
 
 export default function Dashboard() {
   const { data } = useQuery({

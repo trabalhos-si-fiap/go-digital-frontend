@@ -5,7 +5,7 @@ import { exportClients } from '../../../api/export-clients'
 import { getClients } from '../../../api/get-clients'
 import { DialogButton } from '../../../components/dialog-button'
 import { SClienteContent, SClienteHeader, SGhostButton, SSolidButton } from './styles'
-import { Table } from '../../../components/Table'
+import { Table } from '../../../components/table'
 
 export default function Clientes() {
   const { data: clients, refetch } = useQuery({
